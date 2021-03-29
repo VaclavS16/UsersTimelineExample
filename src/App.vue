@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <UserRegistrationTimeline
+      :items="timelineData"
+      :sortByRegisteredDateAsc="true"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import UserRegistrationTimeline from "./components/UserRegistrationTimeline.vue";
+import timelineData from "./assets/timeline.json";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    UserRegistrationTimeline,
+  },
+  data() {
+    return {
+      timelineData: timelineData,
+    };
   },
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+#app
+  font-family: Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-align: center
+  color: #2c3e50
+  margin-top: 60px
 </style>
